@@ -1,17 +1,20 @@
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 
 public class MyStrings 
 {
 	public static void main(String[] args)
 	{
-		String[] strArray = new String[]
-							{
-								"строка 1",
-								"строка 2",
-								"строка 3",
-								"строка 4",
-								"строка5"
-							};
+		HashSet<String> strArray = new HashSet<String>();
+		strArray.add("строка 1");
+		strArray.add("строка 2");
+		strArray.add("строка 3");
+		strArray.add("строка 4");
+		strArray.add("строка 5");
+		strArray.add("строка 1");
+	
 		
 		for (String str : strArray) 
 		{
@@ -33,6 +36,8 @@ public class MyStrings
 		
 		System.out.write(1);
 	}
+	
+	
 }
 
 class MyCls 
