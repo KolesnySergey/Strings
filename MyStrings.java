@@ -6,11 +6,11 @@ public class MyStrings
 	{
 		String[] strArray = new String[]
 							{
-								"строка 1",
-								"строка 2",
-								"строка 3",
-								"строка 4",
-								"строка 5"
+								"СЃС‚СЂРѕРєР° 1",
+								"СЃС‚СЂРѕРєР° 2",
+								"СЃС‚СЂРѕРєР° 3",
+								"СЃС‚СЂРѕРєР° 4",
+								"СЃС‚СЂРѕРєР°5"
 							};
 		
 		for (String str : strArray) 
@@ -20,15 +20,15 @@ public class MyStrings
 		
 		ArrayList<MyCls> newArray = new ArrayList<MyCls>();
 		for (int i = 0; i < 4; i++) {
-			newArray.add(new MyCls(i,"строка #"+i));
+			newArray.add(new MyCls(i,"СЃС‚СЂРѕРєР° #"+i));
 		}
 		
 		for (MyCls myCls : newArray) {
 			System.out.println(myCls.toString());
 		}
 		
-		/**проверим, дублируются ли элементы с одинаковым содержимым*/
-		MyCls newCls = new MyCls(0, "строка #0");
+		/**РїСЂРѕРІРµСЂСЏРµРј, РґСѓР±Р»РёСЂСѓСЋС‚СЃСЏ Р»Рё СЌР»РµРјРµРЅС‚С‹*/
+		MyCls newCls = new MyCls(0, "СЃС‚СЂРѕРєР° #0");
 		newCls.toString();
 		
 		System.out.write(1);
@@ -45,6 +45,7 @@ class MyCls
 		this.str = str;
 	}
 	
+	@Override
 	public String toString()
 	{
 		return "digit = " + digit + "\t str = " + str; 
