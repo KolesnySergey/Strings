@@ -1,6 +1,3 @@
-import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 
 public class MyStrings 
@@ -21,7 +18,7 @@ public class MyStrings
 			System.out.println(str);
 		}
 		
-		ArrayList<MyCls> newArray = new ArrayList<MyCls>();
+		HashSet<MyCls> newArray = new HashSet<MyCls>();
 		for (int i = 0; i < 4; i++) {
 			newArray.add(new MyCls(i,"строка #"+i));
 		}
@@ -31,8 +28,12 @@ public class MyStrings
 		}
 		
 		/**проверяем, дублируются ли элементы*/
-		MyCls newCls = new MyCls(0, "строка #0");
-		newCls.toString();
+		newArray.add(new MyCls(0, "строка #0"));
+		
+		System.out.println("Проверка на дублирование: ");
+		for (MyCls myCls : newArray) {
+			System.out.println(myCls.toString());
+		}
 		
 		System.out.write(1);
 	}
@@ -55,4 +56,20 @@ class MyCls
 	{
 		return "digit = " + digit + "\t str = " + str; 
 	}
+	
+	@Override
+	public boolean equals(Object obj){
+        if (!(obj instanceof MyCls))
+            return false;
+        MyCls myClass = (MyCls)obj;
+        return digit == myClass.digit && str.equals(myClass.str);
+    }
+
+    public int hashCode(){
+        int hash = 22;
+        hash = hash*17 + str.hashCode();
+        hash = hash*17 + digit;
+        return hash;
+    }
+	
 }
